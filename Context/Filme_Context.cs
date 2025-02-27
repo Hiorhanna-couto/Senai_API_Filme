@@ -23,8 +23,8 @@ namespace api_filmes_senai.Context
 
         public DbSet<Genero> Genero { get; set; }
         public DbSet<Filme> Filme { get; set; }
-        public object Generos { get; internal set; }
-
+        public DbSet<Usuario> Usuario { get; set; }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured) 
@@ -32,9 +32,6 @@ namespace api_filmes_senai.Context
             optionsBuilder.UseSqlServer("Server=NOTE18-S28\\SQLEXPRESS; Database = filme_senai; user id=sa; pwd=Senai@134; TrustServerCertificate = true;");
             
             }
-            
         }
-
     }
-
 }

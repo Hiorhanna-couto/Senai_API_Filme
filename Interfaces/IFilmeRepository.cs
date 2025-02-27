@@ -5,14 +5,14 @@ namespace api_filmes_senai.Interfaces
     public interface IFilmeRepository
     {
         void Cadastrar(Filme novoFilme);
-            List<Filme> Cadastrar();
+        List<Filme> Listar();
 
         void Atualizar(Guid id, Filme filme);
 
-        void Deletar (Guid id);
+        void Deletar(Guid id);
 
-        Filme BuscarPorId (Guid id);
-        List<Filme> Listar();
+        Filme BuscarPorId(Guid id);
+
+        List<Filme> listarPorGenero(Guid id);
     }
-
 }

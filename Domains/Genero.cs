@@ -13,7 +13,7 @@ namespace api_filmes_senai.Domains
 
         [Column (TypeName =" VARCHAR(30)")]
         [Required (ErrorMessage ="Nome da Genero e obrigatorio!")]
-        public string ? Nome { get; set; }
+        public string? Nome { get; set; }
 
     }
 }

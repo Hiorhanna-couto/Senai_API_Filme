@@ -36,7 +36,7 @@ namespace api_filmes_senai.Repositories
             }
         }
 
-        public Filme BuscarPorID(Guid id)
+        public Filme BuscarPorId(Guid id)
         {
             try
             {
@@ -49,11 +49,6 @@ namespace api_filmes_senai.Repositories
 
                 throw;
             }
-        }
-
-        public Filme BuscarPorId(Guid id)
-        {
-            throw new NotImplementedException();
         }
 
         public void Cadastrar(Filme novoFilme)
@@ -72,10 +67,6 @@ namespace api_filmes_senai.Repositories
             }
         }
 
-        public List<Filme> Cadastrar()
-        {
-            throw new NotImplementedException();
-        }
 
         public void Deletar(Guid id)
         {
@@ -105,17 +96,17 @@ namespace api_filmes_senai.Repositories
                 List<Filme> listaDeFilmes = _context.Filme
                     .Include(g => g.Genero)
 
-                    //.Select(f => new Filme
-                    //{
-                    //    IdFilme = f.IdFilme,
-                    //    Titulo = f.Titulo,
+                    .Select(f => new Filme
+                    {
+                        IdFilme = f.IdFilme,
+                        Titulo = f.Titulo,
 
-                    //    Genero = new Genero
-                    //    {
-                    //        IdGenero = f.IdGenero,
-                    //        Nome = f.Genero!.Nome
-                    //    }
-                    //})
+                        Genero = new Genero
+                       {
+                           IdGenero = f.IdGenero,
+                           Nome = f.Genero!.Nome
+                      }
+                    })
                     .ToList();
 
 
@@ -128,17 +119,18 @@ namespace api_filmes_senai.Repositories
             }
         }
 
-        public List<Filme> ListarPorGenero(Guid idGenero)
+        
+        public List<Filme> listarPorGenero(Guid idGenero)
         {
             try
             {
-                List<Filme> filmesPorGenero = _context.Filme
-                    .Include(f => f.Genero) // Inclui os dados do gênero
+                List<Filme> listarDeFilme = _context.Filme
+                    .Include(g => g.Genero) // Inclui os dados do gênero
                     .Where(f => f.IdGenero == idGenero) // Filtra os filmes pelo id do gênero
-                    
+
                     .ToList();
 
-                return filmesPorGenero;
+                return listarDeFilme;
             }
             catch (Exception)
             {

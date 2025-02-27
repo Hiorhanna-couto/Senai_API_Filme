@@ -1,3 +1,5 @@
+
+using System.Reflection.Metadata;
 using api_filmes_senai.Context;
 using api_filmes_senai.Interfaces;
 using api_filmes_senai.Repositories;
@@ -11,7 +13,8 @@ builder.Services.AddDbContext<Filme_Context>(options =>
 
 //Adicionar o repositorio e a interface ao containes de injcao de dependencia
 builder.Services.AddScoped<IGeneroRepository,GeneroRepository>();
-builder.Services.AddScoped<IFilmeRepository,IFilmeRepository>();
+builder.Services.AddScoped<IFilmeRepository, FilmeRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 //Adicionar o serviço de controllers
 builder.Services.AddControllers();
