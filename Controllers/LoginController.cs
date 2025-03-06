@@ -22,7 +22,11 @@ namespace api_filmes_senai.Controllers
         }
 
         public BinaryReader JwtRegistered { get; private set; }
-
+        /// <summary>
+        /// Endpoint para Login pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
         [HttpPost]
         public IActionResult Login (LoginDTO loginDTO)
         {

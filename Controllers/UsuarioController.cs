@@ -18,7 +18,11 @@ namespace api_filmes_senai.Controllers
              _usuarioRepository = usuarioRepository;
         }
 
-
+        /// <summary>
+        /// Endpoint para Cadastrar pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
 
         [HttpPost]
 
@@ -39,25 +43,29 @@ namespace api_filmes_senai.Controllers
         }
         // [HttpGet("BuscarPorId/{id}")]
         //public IActionResult GetById(Guid id)
-       // {
-         //   try
+        // {
+        //   try
         //    {
         //        Usuario UsuarioRepository = _usuarioRepository.BuscarPorId(id)!;
 
-         //       return Ok(UsuarioRepository);
+        //       return Ok(UsuarioRepository);
 
-           // }
-           // catch (Exception e)
-          ///  {
-            //    return BadRequest(e.Message);
-         //   }
+        // }
+        // catch (Exception e)
+        ///  {
+        //    return BadRequest(e.Message);
+        //   }
 
-       // }
-
-
+        // }
 
 
 
+
+        /// <summary>
+        /// Endpoint para Usuario pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
 
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)

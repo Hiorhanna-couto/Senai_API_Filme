@@ -17,7 +17,11 @@ namespace api_filmes_senai.Controllers
         {
             _filmeRepository = filmeRepository;
         }
-
+        /// <summary>
+        /// Endpoint listaDeFilme pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
         [HttpGet]
 
         public IActionResult Get()
@@ -33,7 +37,11 @@ namespace api_filmes_senai.Controllers
 
                 return BadRequest(e.Message);
             }
-        }
+        } /// <summary>
+          /// Endpoint Cadastrar Genero pelo seu Id
+          /// </summary>
+          /// <param name="id">id do genero buscado</param>
+          /// <returns>GEnero buscado</returns>
         [HttpPost]
         public IActionResult Post(Filme novofilme)
         {
@@ -49,7 +57,11 @@ namespace api_filmes_senai.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Endpoint para buscar um Filme pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)
         {
@@ -69,7 +81,11 @@ namespace api_filmes_senai.Controllers
             }
 
         }
-
+        /// <summary>
+        /// Endpoint Atualizar pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
         [HttpPut("{id}")]
 
         public IActionResult Put(Guid id, Filme genero)
@@ -88,7 +104,11 @@ namespace api_filmes_senai.Controllers
 
         }
 
-
+        /// <summary>
+        /// Endpoint Deletar pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
 
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
@@ -107,6 +127,12 @@ namespace api_filmes_senai.Controllers
 
 
         }
+
+        /// <summary>
+        /// Endpoint listarDeFilmePorGenero pelo seu Id
+        /// </summary>
+        /// <param name="id">id do genero buscado</param>
+        /// <returns>GEnero buscado</returns>
         [HttpGet("ListarPorGenero/{id}")]
         public IActionResult GetByGenero(Guid id)
         
